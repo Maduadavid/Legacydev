@@ -1,0 +1,93 @@
+/* Body and animation settings */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  animation: backgroundAnimation 10s infinite alternate;
+  transition: background-color 0.3s;
+}
+.typing {
+    color: aqua;
+    justify-content: center;
+    width: 15ch;
+    animation: typing 2s steps(20);
+    overflow: hidden;
+    white-space: nowrap;
+}
+@keyframes typing {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 15ch;
+    }
+}
+/* Keyframes for the darker, blue-tinted background color animation */
+@keyframes backgroundAnimation {
+  0% { background-color: #1b2a49; }  
+  25% { background-color: crimson; } 
+  50% { background-color: palevioletred; } 
+  75% { background-color: blueviolet; }
+  100% { background-color: teal; } 
+}
+
+/* Button container settings */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Link button styling with glowing border, transparent background, and adjusted size */
+.link-button {
+  margin: 15px 0; /* Add space between buttons */
+  padding: 15px 40px; /* Increase padding for wider and taller buttons */
+  font-size: 18px;
+  cursor: pointer;
+  color: #e0e0e0; /* Light gray font color for better contrast */
+  background-color: transparent;
+  border: 3px solid;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+  animation: glowingBorder 3s infinite alternate;
+}
+
+/* Glow animation for button border */
+@keyframes glowingBorder {
+  0% { border-color: #3a9ad9; box-shadow: 0 0 8px #3a9ad9, 0 0 15px #3a9ad9; }
+  25% { border-color: #6ec1e4; box-shadow: 0 0 8px #6ec1e4, 0 0 15px #6ec1e4; }
+  50% { border-color: #82caed; box-shadow: 0 0 8px #82caed, 0 0 15px #82caed; }
+  75% { border-color: #53a7d5; box-shadow: 0 0 8px #53a7d5, 0 0 15px #53a7d5; }
+  100% { border-color: #3a9ad9; box-shadow: 0 0 8px #3a9ad9, 0 0 15px #3a9ad9; }
+}
+
+/* Button hover and active effects */
+.link-button:hover {
+  transform: scale(1.05);
+}
+
+.link-button:active {
+  transform: scale(0.98);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@keyframes openingEffect {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Button hover and active effects */
+.link-button:hover {
+  transform: scale(1.05);
+}
+
+.link-button:active {
+  transform: scale(0.98);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
