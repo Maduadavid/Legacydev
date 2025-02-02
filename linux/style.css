@@ -1,0 +1,102 @@
+/* General styling */
+body {
+  background-color: #121212;
+  font-family: "Courier New", Courier, monospace;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-height: 100vh;
+}
+.head{
+  color: aqua;
+}
+.terminal-container {
+  width: 90%;
+  max-width: 800px;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  overflow: hidden;
+}
+
+.command-header {
+  color: greenyellow;
+  background-color: #222;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.command-header h1 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.copy-btn {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.copy-btn:hover {
+  background-color: #666;
+}
+
+.command-screen {
+  padding: 20px;
+  overflow-y: auto;
+  height: 300px;
+  background-color: #000;
+}
+
+.command-box {
+  margin-bottom: 20px;
+}
+
+.command-title {
+  font-size: 1.1em;
+  color: #00ff00;
+  margin-bottom: 5px;
+}
+
+.command-description {
+  margin-bottom: 10px;
+  color: #aaa;
+}
+
+.command-code {
+  background-color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
+
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.footer {
+  background-color: #222;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8em;
+  color: #aaa;
+  border-top: 1px solid #333;
+}
+footer {
+  color: blue;
+  text-align: center;
+}
