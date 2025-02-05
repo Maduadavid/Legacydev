@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGACY TECH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">LEGACY TECH</div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </div>
+        <nav id="menu">
+            <a href="index.html">Home</a>
+            <a href="premium.html">Premium APKs</a>
+            <a href="vip.html">VIP Courses</a>
+            <a href="hacking.html">Hacking Courses</a>
+            <a href="about.html">About</a>
+            <a href="admin.html">Admin Panel</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to LEGACY TECH</h1>
+            <p>Explore the latest hacking tools, premium apps, and exclusive VIP courses.</p>
+        </section>
+
+        <!-- New section to display dynamic content from localStorage -->
+        <section class="content-grid" id="existing-content">
+            <!-- Content will be dynamically loaded here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright © 2025 LEGACY TECH</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Load content from localStorage and display it only on the Home page
+        window.onload = function() {
+            const currentPage = window.location.pathname.split("/").pop(); // Get the current page from the URL
+            if (currentPage === 'index.html') {
+                const page = 'index.html'; // Current page
+                const existingContent = JSON.parse(localStorage.getItem(page)) || [];
+                const contentContainer = document.getElementById('existing-content');
+                contentContainer.innerHTML = ''; // Clear previous content
+
+                existingContent.forEach((item) => {
+                    const contentDiv = document.createElement('div');
+                    contentDiv.classList.add('card');
+                    
+                    contentDiv.innerHTML = `
+                        <img src="${item.image}" alt="Course Image">
+                        <h2>${item.name}</h2>
+                        <p>${item.description}</p>
+                        <a href="${item.link}" class="btn" target="_blank">Download Link</a>
+                    `;
+                    
+                    contentContainer.appendChild(contentDiv);
+                });
+            }
+        };
+    </script>
+</body>
+</html>

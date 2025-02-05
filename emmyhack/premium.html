@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium APKs - LEGACY TECH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">LEGACY TECH</div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </div>
+        <nav id="menu">
+            <a href="index.html">Home</a>
+            <a href="premium.html">Premium APKs</a>
+            <a href="vip.html">VIP Courses</a>
+            <a href="hacking.html">Hacking Courses</a>
+            <a href="about.html">About</a>
+            <a href="admin.html">Admin Panel</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Premium APK Downloads</h1>
+            <p>Unlock the best apps and tools at no cost.</p>
+        </section>
+
+        <section class="content-grid" id="existing-content">
+            <!-- Content will be dynamically added here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright © 2025 LEGACY TECH</p>
+    </footer>
+
+<script src="script.js"></script>
+<script>
+    // Load content from localStorage and display it
+    window.onload = function() {
+        const page = 'premium.html'; // Current page
+        const existingContent = JSON.parse(localStorage.getItem(page)) || [];
+        const contentContainer = document.getElementById('existing-content');
+        contentContainer.innerHTML = ''; // Clear previous content
+
+        existingContent.forEach((item) => {
+            const contentDiv = document.createElement('div');
+            contentDiv.classList.add('content-item');
+            
+            contentDiv.innerHTML = `
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <img src="${item.image}" alt="APK Image" style="width: 100px; height: 100px;">
+                <a href="${item.link}" target="_blank">Download Link</a>
+            `;
+            
+            contentContainer.appendChild(contentDiv);
+        });
+    };
+</script>
+</body>
+</html>
